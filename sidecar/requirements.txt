@@ -1,0 +1,4 @@
+# Stille-Analyse, Zoom-Planung, B-Roll-Zuordnung
+numpy>=1.26
+# Lokale Transkription auf der CPU (CTranslate2, int8). Keine GPU nötig.
+faster-whisper>=1.1

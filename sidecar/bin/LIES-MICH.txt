@@ -1,0 +1,6 @@
+Optional: Wenn du ffmpeg nicht systemweit installieren willst (winget install Gyan.FFmpeg),
+lege hier einfach ffmpeg.exe ab. Der Helfer sucht in dieser Reihenfolge:
+
+  1. Umgebungsvariable AUTOCUT_FFMPEG (vollständiger Pfad zu ffmpeg.exe)
+  2. dieser Ordner (sidecar\bin\ffmpeg.exe)
+  3. PATH

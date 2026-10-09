@@ -14,7 +14,7 @@ Editing long-form speech starts with the same mechanical processes every time: c
 
 1. Silence removal, with separate padding before and after speech (defaults 80 ms in, 150 ms out) and a tail guard (default 6 dB) so quiet word endings are not cut off.
 2. Automatic zoom in three modes: camera switch, slow zoom, or punch-in on emphasis. Strength 105-125 %, optional ease in/out.
-3. Swoosh: places your own soundeffect at the start of every zoom (default track A2).
+3. Swoosh: places your own sound effect (default swoosh.wav) at the start of every zoom (default track A2)..
 4. B-roll: local transcription (faster-whisper) plus keywords from your B-roll folder. Clips are placed on V2 without audio.
 
 Every step is shown as a preview list first. Nothing is applied until you confirm, and it is applied to a copy of the sequence, never to the original.
@@ -108,7 +108,7 @@ Keyframes always stay inside a single clip segment. If a punch ends at the end o
 ### Trying it out
 
 1. Take a 1-3 minute recording and create a sequence from the clip. Make sure V2 and A2 exist and are empty.
-2. Put soundeffect in `Documents\AutoCut Studio` and 3-5 clips with descriptive names into a B-roll folder.
+2. Put swoosh.wav in `Documents\AutoCut Studio` and 3-5 clips with descriptive names into a B-roll folder.
 3. Analyze, then check word endings with the preview (raise Padding Out if needed).
 4. Enable zoom and pick a mode, enable swoosh, enable B-roll, choose the folder, transcribe.
 5. Review the preview, untick what does not fit, and apply to the copy.

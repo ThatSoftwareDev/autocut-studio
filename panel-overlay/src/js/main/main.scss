@@ -1,0 +1,321 @@
+// AutoCut Studio – an Premieres dunkle Oberfläche angelehnt, kompakt.
+
+$text: #d6d6d6;
+$muted: #9a9a9a;
+$line: #3a3a3a;
+$card: rgba(255, 255, 255, 0.04);
+$accent: #2d8ceb;
+$ok: #3fb26b;
+$warn: #e0a83a;
+$err: #e5534b;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 12px;
+  color: $text;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 10px 12px 16px;
+  text-align: left;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+
+  h1 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: $muted;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $muted;
+  }
+  &.ok .dot {
+    background: $ok;
+  }
+  &.noffmpeg .dot {
+    background: $warn;
+  }
+  &.down .dot {
+    background: $err;
+  }
+}
+
+.card {
+  background: $card;
+  border: 1px solid $line;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  h2 {
+    font-size: 13px;
+    margin: 0 0 10px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 10px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  label {
+    color: $muted;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.value {
+  min-width: 48px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  color: $muted;
+}
+
+input[type="range"] {
+  flex: 1;
+}
+
+input[type="number"],
+select {
+  width: 80px;
+  background: #1b1b1b;
+  color: $text;
+  border: 1px solid $line;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+button {
+  background: #3a3a3a;
+  color: $text;
+  border: 1px solid #4a4a4a;
+  border-radius: 3px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 12px;
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+  &.primary {
+    background: $accent;
+    border-color: $accent;
+    color: #fff;
+  }
+  &.link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: $accent;
+    text-decoration: underline;
+  }
+}
+
+.hint {
+  color: $muted;
+  margin: 6px 0;
+}
+
+.msg {
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin: 8px 0;
+  border-left: 3px solid;
+  background: rgba(0, 0, 0, 0.2);
+
+  ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+  }
+  p {
+    margin: 4px 0;
+  }
+  &.error {
+    border-color: $err;
+  }
+  &.warn {
+    border-color: $warn;
+  }
+  &.ok {
+    border-color: $ok;
+  }
+  code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0 3px;
+  }
+}
+
+.levels {
+  color: $muted;
+  margin: 8px 0;
+  b {
+    color: $text;
+  }
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 6px;
+}
+
+.cuts {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid $line;
+  border-radius: 4px;
+
+  li {
+    display: grid;
+    grid-template-columns: 18px 1fr 56px 52px max-content;
+    gap: 6px;
+    align-items: center;
+    padding: 3px 6px;
+    border-bottom: 1px solid $line;
+    font-variant-numeric: tabular-nums;
+
+    &:last-child {
+      border-bottom: none;
+    }
+    &.off {
+      opacity: 0.45;
+    }
+  }
+  .dur,
+  .db {
+    color: $muted;
+    text-align: right;
+  }
+}
+
+.confirm {
+  border: 1px solid $accent;
+  border-radius: 4px;
+  padding: 8px 10px;
+  p {
+    margin: 0 0 8px;
+  }
+}
+
+.progress {
+  margin: 10px 0;
+  .label {
+    color: $muted;
+    margin-bottom: 4px;
+  }
+  .bar {
+    height: 6px;
+    background: #1b1b1b;
+    border-radius: 3px;
+    overflow: hidden;
+    div {
+      height: 100%;
+      background: $accent;
+      transition: width 0.2s;
+    }
+  }
+}
+
+footer {
+  color: $muted;
+  font-size: 11px;
+}
+
+// ---- Schritt 2 ----
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  h2 {
+    margin: 0;
+  }
+  &.sub {
+    margin: 6px 0 8px;
+    font-weight: 600;
+  }
+}
+.card > .toggle + .grid,
+.card > .toggle + * {
+  margin-top: 10px;
+}
+.small {
+  font-size: 11px;
+}
+.filebox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.path {
+  font-family: Consolas, monospace;
+  font-size: 11px;
+  word-break: break-all;
+  &.missing {
+    color: $warn;
+  }
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: $text !important;
+}
+.kw {
+  max-height: 160px;
+  overflow-y: auto;
+}
+.cuts li.zoomrow,
+.cuts li.brollrow {
+  grid-template-columns: 18px 70px 1fr max-content;
+}
+.confirm ul {
+  margin: 0 0 8px;
+  padding-left: 18px;
+}

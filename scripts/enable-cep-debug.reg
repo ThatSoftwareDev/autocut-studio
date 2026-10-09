@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+; Erlaubt Premiere, unsignierte CEP-Panels (dein eigenes Panel im Entwicklungsmodus) zu laden.
+; Gilt nur für deinen Windows-Benutzer. Doppelklicken -> "Ja" -> Premiere neu starten.
+; Rückgängig: die Werte "PlayerDebugMode" in diesen Schlüsseln löschen oder auf "0" setzen.
+
+[HKEY_CURRENT_USER\Software\Adobe\CSXS.10]
+"PlayerDebugMode"="1"
+
+[HKEY_CURRENT_USER\Software\Adobe\CSXS.11]
+"PlayerDebugMode"="1"
+
+[HKEY_CURRENT_USER\Software\Adobe\CSXS.12]
+"PlayerDebugMode"="1"
+
+[HKEY_CURRENT_USER\Software\Adobe\CSXS.13]
+"PlayerDebugMode"="1"

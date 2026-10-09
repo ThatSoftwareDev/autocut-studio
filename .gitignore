@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Build output
+dist/
+build/
+*.zxp
+
+# Downloaded at setup time (see the download-model
+# / setup scripts in sidecar/)
+sidecar/models/
+sidecar/bin/*
+!sidecar/bin/LIES-MICH.txt
+
+# Model weights
+*.bin
+*.pt
+*.gguf
+*.onnx
+*.safetensors
+
+# Premiere projects, media and caches - never commit
+*.prproj
+*.aep
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.cfa
+*.pek
+*.ims
+Adobe Premiere Pro Auto-Save/
+
+# Signing certificates and secrets
+*.p12
+*.pfx
+*.pem
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
